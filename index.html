@@ -74,7 +74,113 @@
 
 
 
-   
+   <!-- 2 -->
+
+
+    <!-- all cards section -->
+    <section class=" max-w-[1600px] mx-auto hidden" id="all-elements">
+
+
+        <!-- navbar -->
+        <nav class="bg-white p-3 shadow md:flex justify-between mb-[100px]">
+            <div class="md:flex gap-1 items-center">
+                <img src="./assets/github-logo.png" alt="" class="w-10 mx-auto">
+                <p class="text-2xl text-center">GitHub Issues Tracker</p>
+            </div>
+
+            <div class="text-center">
+                <input type="text" placeholder="Search Issues....." class="border border-gray-200 p-1.5 mx-auto"
+                    id="search-input">
+                <button class="btn btn-primary mx-auto" id="search-btn">Search</button>
+            </div>
+
+        </nav>
+
+        <!-- 3 -->
+
+           <!-- all button section -->
+        <div class="bg-white my-3 md:flex gap-3 text-center md:text-left p-3 max-w-[1400px] mx-auto" id="all-buttons">
+            <button class="btn btn-primary px-4 py-2" id="all-data">All</button>
+            <button class="btn px-4 py-2" id="open-data">Open</button>
+            <button class="btn px-4 py-2" id="close-data">Close</button>
+        </div>
+
+        <!-- issue count  -->
+        <div class="bg-white max-w-[1400px] mx-auto p-3 flex flex-col md:flex-row justify-between items-center gap-4">
+          <!-- sub-1 -->
+            <div class="flex flex-col  md:flex-row text-center md:text-left items-center gap-2">
+                <img src="./assets/Aperture.png" alt="">
+                <div>
+                    <h1 class="font-bold"> <span id="issue-count">0</span> Issues</h1>
+                    <p>Track and manage your project issues</p>
+                </div>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-circle text-green-500"></i>
+                <span>Open</span>
+                <i class="fa-solid fa-circle text-purple-600"></i>
+                <span>Closed</span>
+            </div>
+
+        </div>
+
+        <!-- all cards -->
+        <div id="cards-container" class="max-w-[1400px] bg-gray-100 mx-auto p-5 grid md:grid-cols-4 gap-2">
+
+        </div>
+        <!-- spinner -->
+        <div class=" text-center hidden  justify-center items-center" id="spinner">
+            <span class="loading loading-spinner loading-xl"></span>
+
+        </div>
+
+
+    </section>
+
+<!-- 4 -->
+  
+    <dialog id="modal" class="modal">
+        <div class="modal-box space-y-2">
+            <h3 class="text-lg font-bold" id="heading">Hello!</h3>
+
+            <div class="flex gap-7">
+                <span id="status">Opened</span>
+                <span>
+                    <li>Opened by <span id="open">Sarjil Ahmed</span></li>
+                </span>
+                <span id="date">24/02/2026</span>
+            </div>
+
+            <div>
+                <span class="bg-amber-200 p-1 rounded-2xl" id="bug">bug</span>
+               
+            </div>
+            <p id="para">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive
+                behavior.</p>
+
+
+            <div class="flex justify-between bg-gray-200 p-1 rounded-2xl">
+                <div>
+                    <span id="assign">Assign:</span>
+                    <p id="name">Sarjil</p>
+                </div>
+                <div>
+                    <span id="priority">Priority:</span>
+                    <p id="quality">high</p>
+                </div>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!--button for close modal -->
+                    <button class="btn btn-primary">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+  
+
 
    
 </body>
