@@ -23,3 +23,35 @@ let assign = document.getElementById('assign');
 let names = document.getElementById('name');
 let priority = document.getElementById('priority');
 let quality = document.getElementById('quality');
+
+
+//......//
+
+
+
+
+
+loginBtn.addEventListener('click', function () {
+    if (username.value === 'admin' && password.value === 'admin123') {
+        loginPage.classList.add('hidden')
+        allElements.classList.remove('hidden')
+    }
+    else {
+        alert('Invalid Information')
+    }
+})
+
+// function for load all data
+const loadData = () => {
+    spinner.classList.remove('hidden')
+    fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
+        .then(res => res.json())
+        .then(data => {
+            displayData(data.data)
+            //    displayModal(data.data)
+            spinner.classList.add('hidden')
+        })
+
+}
+loadData()
+
