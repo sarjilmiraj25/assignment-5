@@ -171,4 +171,42 @@ const displayClosedData = (data) => {
 
 
 }
+// function for display open data
+const displayOpenData = (data) => {
+    cardsContaier.innerHTML = ''
+    data.forEach(element => {
+        if (element.status === 'open') {
 
+            let lbl = ''
+            element.labels.forEach(label => {
+                lbl += `<span class="bg-amber-50 p-1">${label}</span>`
+            })
+
+            let card = document.createElement('div')
+            card.onclick = () => openModal(element.title)
+            card.className = "card max-w-[400px] space-y-3 p-3 bg-white "
+            card.innerHTML = `
+     <p class="text-right">${element.priority}</p>
+                <h1 class="text-2xl min-h-[70px]">${element.title}</h1>
+               <p class="line-clamp-2">${element.description}</p>
+               <div class="flex gap-2 ">
+                   
+                ${lbl}
+               </div>
+                <hr>
+                 <p>${element.author}</p>
+                 <p>${element.createdAt}</p>
+    
+    `
+
+            // issueCount.innerText = element.data.length
+            cardsContaier.appendChild(card)
+            issueCount.innerText = cardsContaier.children.length
+
+            if (element.status === 'open') {
+                card.classList.add('border-t-2', 'border-t-green-600')
+            }
+        }
+
+    })
+}
